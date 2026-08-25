@@ -1,0 +1,116 @@
+.account-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 36px;
+}
+
+.account-nav a {
+  display: block;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-3);
+  border-radius: 3px;
+  margin-bottom: 4px;
+}
+
+.account-nav a.active {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.account-nav a:hover:not(.active) {
+  background: var(--paper-2);
+}
+
+.rec-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rec-main {
+  flex: 1;
+  min-width: 200px;
+}
+
+.rec-main h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.rec-meta {
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.status-pill {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.pill-pending {
+  background: rgba(180, 138, 74, 0.18);
+  color: var(--teak);
+}
+
+.pill-confirmed {
+  background: rgba(69, 87, 63, 0.16);
+  color: var(--moss);
+}
+
+.pill-completed {
+  background: rgba(27, 31, 28, 0.1);
+  color: var(--ink);
+}
+
+.pill-cancelled {
+  background: rgba(161, 78, 42, 0.14);
+  color: var(--rust);
+}
+
+.pill-new {
+  background: rgba(180, 138, 74, 0.18);
+  color: var(--teak);
+}
+
+.pill-contacted {
+  background: rgba(69, 87, 63, 0.16);
+  color: var(--moss);
+}
+
+.pill-interested {
+  background: #dcebe0;
+  color: var(--moss);
+}
+
+.pill-closed {
+  background: rgba(27, 31, 28, 0.1);
+  color: var(--ink);
+}
+
+.profile-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 26px;
+  max-width: 460px;
+}
+
+@media (max-width: 1024px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,269 @@
+.filter-bar {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: 13px;
+  background: var(--paper);
+  outline: none;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+  border-color: var(--brass);
+}
+
+.results-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+@media (max-width: 680px) {
+  .filter-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Properties listing page — marketplace style (appended) ===== */
+
+.props-page {
+  padding-top: 32px;
+  padding-bottom: 60px;
+}
+
+.props-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.props-header h2 {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: 30px;
+  margin: 0 0 4px;
+  color: #1C1917;
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-control label {
+  font-size: 13px;
+  color: #78716C;
+}
+
+.sort-control select {
+  background: #ffffff;
+  border: 1px solid #E7E0D5;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #1C1917;
+  outline: none;
+  cursor: pointer;
+}
+
+.props-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.prop-sidebar {
+  background: #ffffff;
+  border: 1px solid #E7E0D5;
+  border-radius: 14px;
+  padding: 20px;
+  position: sticky;
+  top: 96px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.sidebar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sidebar-head h3 {
+  margin: 0;
+  font-size: 17px;
+  color: #1C1917;
+}
+
+.link-btn {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: #D97706;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-group {
+  margin-bottom: 18px;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #78716C;
+  margin-bottom: 8px;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  background: #FFF9F0;
+  border: 1px solid #E7E0D5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #1C1917;
+  outline: none;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #F59E0B;
+}
+
+.range-row {
+  display: flex;
+  gap: 8px;
+}
+
+.chip-row {
+  display: flex;
+  gap: 6px;
+}
+
+.chip-row.wrap {
+  flex-wrap: wrap;
+}
+
+.chip {
+  appearance: none;
+  background: #FFF9F0;
+  border: 1px solid #E7E0D5;
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #78716C;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chip:hover {
+  border-color: #F59E0B;
+  color: #1C1917;
+}
+
+.chip.active {
+  background: #D97706;
+  border-color: #D97706;
+  color: #ffffff;
+}
+
+.mobile-controls {
+  display: none;
+  margin-bottom: 14px;
+}
+
+.mobile-filter-btn {
+  width: 100%;
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid #E7E0D5;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1C1917;
+  cursor: pointer;
+}
+
+.sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 25, 23, 0.5);
+  z-index: 300;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bottom-sheet {
+  background: #ffffff;
+  width: 100%;
+  max-height: 85vh;
+  border-radius: 20px 20px 0 0;
+  padding: 12px 20px 20px;
+  overflow-y: auto;
+  animation: sheetUp 0.25s ease;
+}
+
+@keyframes sheetUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.sheet-handle {
+  width: 44px;
+  height: 5px;
+  background: #E7E0D5;
+  border-radius: 3px;
+  margin: 0 auto 16px;
+}
+
+.sheet-foot {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.sheet-foot .btn {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .props-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-controls {
+    display: block;
+  }
+}

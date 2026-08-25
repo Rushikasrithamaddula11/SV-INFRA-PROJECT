@@ -1,0 +1,340 @@
+:root {
+  /* Premium Orange + Cream + Charcoal Color System */
+  --primary-orange: #D97706;
+  --bright-orange: #F59E0B;
+  --deep-orange: #B45309;
+  --light-orange: #FEF3C7;
+  
+  --ivory: #FFF9F0;
+  --soft-cream: #F7F1E7;
+  --white: #FFFFFF;
+  
+  --charcoal: #1C1917;
+  --charcoal-light: #292524;
+  --muted-text: #78716C;
+  --border-color: #E7E0D5;
+  
+  /* Legacy variable mapping for compatibility */
+  --ink: #1C1917;
+  --ink-2: #292524;
+  --ink-3: #78716C;
+  --paper: #FFF9F0;
+  --paper-2: #F7F1E7;
+  --teak: #B45309;
+  --brass: #D97706;
+  --brass-light: #F59E0B;
+  --moss: #D97706;
+  --rust: #B45309;
+  --cream: #FFFFFF;
+  --line: rgba(231, 224, 213, 0.6);
+  --line-dark: rgba(231, 224, 213, 0.3);
+  
+  /* Shadows - Premium & Subtle */
+  --shadow-sm: 0 1px 2px 0 rgba(28, 25, 23, 0.05);
+  --shadow: 0 4px 6px -1px rgba(28, 25, 23, 0.08), 0 2px 4px -1px rgba(28, 25, 23, 0.04);
+  --shadow-md: 0 10px 15px -3px rgba(28, 25, 23, 0.08), 0 4px 6px -2px rgba(28, 25, 23, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(28, 25, 23, 0.08), 0 10px 10px -5px rgba(28, 25, 23, 0.03);
+  
+  /* Premium Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Inter', monospace;
+  
+  /* Legacy font mapping */
+  --font-d: 'Playfair Display', Georgia, serif;
+  --font-b: 'Manrope', 'Inter', sans-serif;
+  --font-m: 'Inter', monospace;
+  
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s ease;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Add padding for mobile when bottom nav is visible */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 70px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-orange);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary-orange);
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* PREMIUM BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  letter-spacing: 0.01em;
+  transition: var(--transition);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary-orange);
+  color: var(--white);
+  border-color: var(--primary-orange);
+}
+
+.btn-primary:hover {
+  background: var(--deep-orange);
+  border-color: var(--deep-orange);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-brass {
+  background: var(--primary-orange);
+  color: var(--white);
+  border-color: var(--primary-orange);
+}
+
+.btn-brass:hover {
+  background: var(--bright-orange);
+  border-color: var(--bright-orange);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 2px solid var(--charcoal);
+  color: var(--charcoal);
+}
+
+.btn-ghost:hover {
+  background: var(--charcoal);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.btn-ghost-light {
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+.btn-ghost-light:hover {
+  background: var(--white);
+  color: var(--charcoal);
+}
+
+.btn-wa {
+  background: var(--primary-orange);
+  color: var(--white);
+}
+
+.btn-wa:hover {
+  background: var(--deep-orange);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-danger {
+  background: var(--deep-orange);
+  color: var(--white);
+}
+
+.btn-danger:hover {
+  background: #92400e;
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* TOAST - Premium Style */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  background: var(--white);
+  color: var(--charcoal);
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--primary-orange);
+  animation: toastin .3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes toastin {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* LOADING */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary-orange);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center;
+  padding: 100px 20px;
+  color: var(--muted-text);
+}
+
+.empty-state h3 {
+  margin-bottom: 12px;
+  color: var(--charcoal);
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  max-width: 400px;
+  margin: 0 auto 24px;
+}
