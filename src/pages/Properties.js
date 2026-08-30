@@ -353,10 +353,10 @@ const Properties = () => {
         <div className="props-header">
           <div>
             <h2>
-              Properties{filters.search ? ` in ${filters.search}` : ''}
+              Services{filters.search ? ` in ${filters.search}` : ''}
               {filters.tab ? ` · ${TAB_LABELS[filters.tab]}` : ''}
             </h2>
-            <span className="eyebrow">{filteredProperties.length} Properties Found</span>
+            <span className="eyebrow">{filteredProperties.length} Services Found</span>
           </div>
           <div className="sort-control">
             <label>Sort by:</label>

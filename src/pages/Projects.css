@@ -1,0 +1,20 @@
+.projects-page { background: #f4f8fc; padding: 0 0 95px; }
+.projects-hero { background: #071a33; color: #fff; padding: 88px 0 82px; }
+.projects-hero h1 { color: #fff; font-size: clamp(44px, 6vw, 70px); margin: 0 0 17px; }
+.projects-hero p { color: #c7d7e8; font-size: 18px; max-width: 580px; }
+.projects-list { display: grid; gap: 30px; margin-top: -32px; }
+.project-card { display: grid; grid-template-columns: minmax(330px, .85fr) 1.15fr; background: #fff; border: 1px solid #dce6f0; box-shadow: 0 12px 32px rgba(7, 26, 51, .07); }
+.project-image { min-height: 345px; background-size: cover; background-position: center; position: relative; }
+.project-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(7,26,51,.72)); }
+.project-image span { color: #fff; position: absolute; z-index: 1; bottom: 24px; left: 24px; font-size: 12px; text-transform: uppercase; font-weight: 800; letter-spacing: .12em; }
+.project-body { position: relative; padding: 38px 42px 34px; }
+.project-number { color: #7891ac; font-weight: 800; font-size: 13px; letter-spacing: .12em; }
+.project-body h2 { color: #0b2545; font-size: 31px; margin: 14px 0 9px; }
+.project-location { display: flex; gap: 8px; align-items: center; color: #31557c; font-weight: 700; font-size: 14px; }
+.project-description { margin: 22px 0 27px; color: #60748c; font-size: 15px; line-height: 1.72; }
+.project-meta { border-top: 1px solid #dce6f0; padding-top: 19px; display: grid; grid-template-columns: .7fr .8fr 1.5fr; gap: 18px; }
+.project-meta div { display: grid; gap: 3px; }
+.project-meta b { color: #31557c; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.project-meta span { color: #435c75; font-size: 13px; line-height: 1.45; }
+@media (max-width: 820px) { .project-card { grid-template-columns: 1fr; } .project-image { min-height: 270px; } .project-body { padding: 30px 24px; } }
+@media (max-width: 540px) { .projects-hero { padding: 65px 0; } .project-meta { grid-template-columns: 1fr; } .project-body h2 { font-size: 27px; } }

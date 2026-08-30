@@ -75,9 +75,9 @@ const Home = () => {
           <div className="section-head">
             <div>
               <span className="eyebrow">Handpicked</span>
-              <h2>Featured properties</h2>
+              <h2>Featured services</h2>
             </div>
-            <Link to="/properties" className="btn btn-ghost btn-sm">View all</Link>
+            <Link to="/services" className="btn btn-ghost btn-sm">View all</Link>
           </div>
           <div className="grid grid-3">
             {featured.map(property => (
@@ -92,7 +92,7 @@ const Home = () => {
           <div className="section-head">
             <div>
               <span className="eyebrow">Just listed</span>
-              <h2>Latest properties</h2>
+              <h2>Latest services</h2>
             </div>
           </div>
           <div className="grid grid-3">
@@ -109,7 +109,7 @@ const Home = () => {
             <h2>Ready to see it in person?</h2>
             <p>Schedule a site visit at a time that works for you — no pressure, no sales script.</p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link to="/properties" className="btn btn-brass">Schedule a Visit</Link>
+              <Link to="/services" className="btn btn-brass">Schedule a Visit</Link>
               <a href="https://wa.me/914023456789" target="_blank" rel="noopener noreferrer" className="btn btn-ghost-light">
                 WhatsApp Us
               </a>

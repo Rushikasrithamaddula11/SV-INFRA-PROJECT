@@ -94,7 +94,7 @@ const SearchModule = ({ compact = false }) => {
     const out = [];
     [...localityMatches, ...cityMatches].slice(0, 3).forEach(place => {
       out.push({ type: 'place', label: place });
-      out.push({ type: 'search', label: `Properties in ${place}` });
+      out.push({ type: 'search', label: `Services in ${place}` });
       out.push({ type: 'search', label: `${place} Apartments` });
       out.push({ type: 'search', label: `${place} Villas` });
     });

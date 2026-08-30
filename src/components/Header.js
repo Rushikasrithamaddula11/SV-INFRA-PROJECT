@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { collection, query, where, getDocs } from 'firebase/firestore';
@@ -18,18 +18,18 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    if (currentUser) {
-      loadFavoriteCount();
-    }
-  }, [currentUser]);
-
-  const loadFavoriteCount = async () => {
+  const loadFavoriteCount = useCallback(async () => {
     if (!currentUser) return;
     const q = query(collection(db, 'favorites'), where('userId', '==', currentUser.uid));
     const snapshot = await getDocs(q);
     setFavoriteCount(snapshot.size);
-  };
+  }, [currentUser]);
+
+  useEffect(() => {
+    if (currentUser) {
+      loadFavoriteCount();
+    }
+  }, [currentUser, loadFavoriteCount]);
 
   const openAuth = (mode) => {
     setAuthMode(mode);
@@ -53,29 +53,30 @@ const Header = () => {
       <header className="header">
         <div className="container nav-row">
           <Link to="/" className="logo">
-            <img src={logo} alt="The Swamy Properties" className="logo-img" />
+            <img src={logo} alt="SV Projects 972" className="logo-img" />
             <span className="logo-text">
-              THE SWAMY
-              <span className="logo-sub">Properties</span>
+              SV PROJECTS
+              <span className="logo-sub">972</span>
             </span>
           </Link>
 
           <nav className="desktop-nav">
             <Link to="/" className="nav-link">Home</Link>
-            <Link to="/properties" className="nav-link">Properties</Link>
-            <Link to="/properties?type=Project" className="nav-link">Projects</Link>
+            <Link to="/services" className="nav-link">Services</Link>
+            <Link to="/projects" className="nav-link">Projects</Link>
             <Link to="/about" className="nav-link">About</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
             
             {/* Inline Search Bar */}
             <div className="nav-search">
               <FaSearch className="search-icon" />
               <input 
                 type="text" 
-                placeholder="Search properties..." 
+                placeholder="Search services..." 
                 className="nav-search-input"
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && e.target.value.trim()) {
-                    navigate(`/properties?search=${e.target.value}`);
+                    navigate(`/services?search=${e.target.value}`);
                     e.target.value = '';
                   }
                 }}
@@ -120,11 +121,11 @@ const Header = () => {
             <div className="container">
               <input 
                 type="text" 
-                placeholder="Search properties..." 
+                placeholder="Search services..." 
                 className="search-input"
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
-                    navigate(`/properties?search=${e.target.value}`);
+                    navigate(`/services?search=${e.target.value}`);
                     setShowSearchBar(false);
                   }
                 }}
@@ -144,11 +145,11 @@ const Header = () => {
           <span>Home</span>
         </Link>
         <Link 
-          to="/properties" 
-          className={`bottom-nav-item ${isActive('/properties') ? 'active' : ''}`}
+          to="/services" 
+          className={`bottom-nav-item ${isActive('/services') ? 'active' : ''}`}
         >
           <FaBuilding />
-          <span>Properties</span>
+          <span>Services</span>
         </Link>
         <button 
           className="bottom-nav-item" 
@@ -185,14 +186,17 @@ const Header = () => {
             <Link to="/" className="nav-link" onClick={() => setShowMobileMenu(false)}>
               Home
             </Link>
-            <Link to="/properties" className="nav-link" onClick={() => setShowMobileMenu(false)}>
-              Properties
+            <Link to="/services" className="nav-link" onClick={() => setShowMobileMenu(false)}>
+              Services
             </Link>
-            <Link to="/properties?type=Project" className="nav-link" onClick={() => setShowMobileMenu(false)}>
+            <Link to="/projects" className="nav-link" onClick={() => setShowMobileMenu(false)}>
               Projects
             </Link>
             <Link to="/about" className="nav-link" onClick={() => setShowMobileMenu(false)}>
               About
+            </Link>
+            <Link to="/contact" className="nav-link" onClick={() => setShowMobileMenu(false)}>
+              Contact
             </Link>
             <Link to="/account" className="nav-link" onClick={() => setShowMobileMenu(false)}>
               {currentUser ? `My Account — ${userProfile?.name?.split(' ')[0]}` : 'Login / Register'}

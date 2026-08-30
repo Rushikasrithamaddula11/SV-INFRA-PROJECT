@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../logo.svg';
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -8,39 +8,30 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="foot-grid">
-          <div>
-            <div className="logo" style={{ color: 'var(--cream)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <img src={logo} alt="The Swamy Properties" style={{ width: '36px', height: '36px', borderRadius: '8px' }} />
-              THE SWAMY
-            </div>
-            <p style={{ fontSize: '13px', maxWidth: '280px' }}>
-              Premium villas, apartments and plots across Hyderabad, Bengaluru and Goa — chosen for how they live, not just how they look.
-            </p>
+          <div className="footer-about">
+            <h3>SV INFRA PROJECTS 972</h3>
+            <p>Professional ACP Cladding, Structural Glazing, Toughened Glass, Aluminium and Interior Solutions for Commercial &amp; Residential Projects.</p>
           </div>
           <div>
-            <h4>Explore</h4>
-            <Link to="/">Home</Link>
-            <Link to="/properties">Properties</Link>
-            <Link to="/properties?type=Project">Projects</Link>
-            <Link to="/about">About</Link>
+            <h4>Quick Links</h4>
+            <Link to="/about">About Us</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/">Gallery</Link>
+            <Link to="/contact">Contact Us</Link>
           </div>
-          <div>
-            <h4>Account</h4>
-            <Link to="/account">My Account</Link>
-            <Link to="/favorites">Favorites</Link>
+          <div className="office-details">
+            <h4>Andhra Pradesh Office</h4>
+            <p><FaMapMarkerAlt aria-hidden="true" /> <span>Opp. Rajahamsa Guest House, RTC Bus Stand to Gooty Road, Anantapur, Andhra Pradesh</span></p>
+            <h4>Telangana Office</h4>
+            <p><FaMapMarkerAlt aria-hidden="true" /> <span>9-1-1 to 3, Brundavan Studio, ISKCON Compound, St. John's Road, Secunderabad, Telangana</span></p>
           </div>
-          <div>
-            <h4>Talk to us</h4>
-            <a href="tel:+914023456789">+91 40 2345 6789</a>
-            <a href="https://wa.me/914023456789" target="_blank" rel="noopener noreferrer">
-              WhatsApp
-            </a>
-            <a href="mailto:hello@tuheswamiproperties.com">hello@tuheswamiproperties.com</a>
+          <div className="contact-details">
+            <h4>Contact</h4>
+            <a href="tel:+919515988011"><FaPhoneAlt aria-hidden="true" /> +91 95159 88011</a>
+            <a href="tel:+918801185559"><FaPhoneAlt aria-hidden="true" /> +91 88011 85559</a>
+            <a href="mailto:info@svinfraprojects.com"><FaEnvelope aria-hidden="true" /> info@svinfraprojects.com</a>
           </div>
-        </div>
-        <div className="foot-bottom">
-          <span>© 2026 The Swamy Properties. All rights reserved.</span>
-          <span>Hyderabad · Bengaluru · Goa</span>
         </div>
       </div>
     </footer>

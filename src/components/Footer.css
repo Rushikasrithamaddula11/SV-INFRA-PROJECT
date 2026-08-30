@@ -4,6 +4,45 @@ footer {
   padding: 56px 0 28px;
 }
 
+.footer-about h3 {
+  color: var(--cream);
+  font-family: var(--font-a);
+  font-size: 22px;
+  margin: 0 0 22px;
+}
+
+.footer-about p {
+  max-width: 350px;
+  font-size: 16px;
+  line-height: 1.62;
+  margin: 0;
+}
+
+.office-details p,
+.contact-details a {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.48;
+}
+
+.office-details p {
+  max-width: 330px;
+  margin: 0 0 28px;
+}
+
+.office-details svg,
+.contact-details svg {
+  color: var(--cream);
+  flex: 0 0 auto;
+  margin-top: 4px;
+}
+
+.contact-details a {
+  padding: 7px 0;
+  white-space: nowrap;
+}
+
 .foot-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;

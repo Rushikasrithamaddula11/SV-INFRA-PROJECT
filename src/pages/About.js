@@ -1,39 +1,38 @@
-import React from 'react';
+import React from "react";
+import "./About.css";
 
 const About = () => {
   return (
-    <section style={{ paddingTop: '40px' }}>
-      <div className="container" style={{ maxWidth: '760px' }}>
-        <span className="eyebrow">About The Swamy Properties</span>
-        <h2 style={{ fontSize: '34px', margin: '12px 0 20px' }}>
-          A smaller list of better-checked homes.
+    <section className="about-page">
+      <div className="container about-shell">
+        <span className="about-kicker">About SV Projects 972</span>
+        <h2 className="about-title">
+          Exterior solutions, built with care.
         </h2>
-        <p style={{ color: 'var(--ink-3)', marginBottom: '16px' }}>
-          The Swamy Properties works with a short list of developer partners across Hyderabad, Bengaluru and Goa. 
-          Every listing is site-verified before it goes live, and availability status is kept current — what you 
-          see is what is actually left.
+        <p className="about-lead about-text">
+          SV Projects 972 delivers façade, cladding, glazing, window and renovation work for residential and commercial projects.
+          We focus on durable materials, clean detailing and dependable execution from design through installation.
         </p>
-        <p style={{ color: 'var(--ink-3)', marginBottom: '16px' }}>
-          We keep the process simple: browse, shortlist, schedule a visit, and talk to a real person before you 
-          decide anything. No call centre scripts.
+        <p className="about-text">
+          We keep the process simple: discuss your requirement, select the right finish and system, then coordinate a professional installation.
         </p>
-        <div className="grid grid-3" style={{ marginTop: '36px' }}>
-          <div className="p-card" style={{ padding: '22px' }}>
-            <h3 style={{ fontSize: '17px', marginBottom: '8px' }}>Site-verified listings</h3>
+        <div className="about-benefits" style={{ marginTop: '36px' }}>
+          <div className="about-benefit" style={{ padding: '22px' }}>
+            <h3 style={{ fontSize: '17px', marginBottom: '8px' }}>Quality finishes</h3>
             <p style={{ fontSize: '13px', color: 'var(--ink-3)' }}>
-              Every property is inspected before publishing.
+              Thoughtful material choices for a lasting exterior.
             </p>
           </div>
-          <div className="p-card" style={{ padding: '22px' }}>
-            <h3 style={{ fontSize: '17px', marginBottom: '8px' }}>Real availability</h3>
+          <div className="about-benefit" style={{ padding: '22px' }}>
+            <h3 style={{ fontSize: '17px', marginBottom: '8px' }}>Expert execution</h3>
             <p style={{ fontSize: '13px', color: 'var(--ink-3)' }}>
-              Status updates the moment a unit is reserved or sold.
+              Skilled workmanship for every stage of the project.
             </p>
           </div>
-          <div className="p-card" style={{ padding: '22px' }}>
-            <h3 style={{ fontSize: '17px', marginBottom: '8px' }}>Direct access</h3>
+          <div className="about-benefit" style={{ padding: '22px' }}>
+            <h3 style={{ fontSize: '17px', marginBottom: '8px' }}>Direct support</h3>
             <p style={{ fontSize: '13px', color: 'var(--ink-3)' }}>
-              Book a visit and speak with our team directly.
+              Speak directly with our team about your requirements.
             </p>
           </div>
         </div>

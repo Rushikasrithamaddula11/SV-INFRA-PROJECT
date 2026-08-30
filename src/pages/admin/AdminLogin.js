@@ -83,7 +83,7 @@ const AdminLogin = () => {
     <div className="admin-login-page">
       <div className="admin-login-box">
         <div className="admin-logo">
-          THE SWAMY
+          SV PROJECTS 972
           <span className="admin-badge">Admin</span>
         </div>
         <h2>Admin Login</h2>

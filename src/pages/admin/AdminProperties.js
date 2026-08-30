@@ -168,7 +168,7 @@ const AdminProperties = () => {
       <div className="admin-content">
         <div className="admin-page-header">
           <div>
-            <h1>Properties</h1>
+            <h1>Services</h1>
             <p>Manage property listings</p>
           </div>
           <button className="btn btn-primary" onClick={() => handleOpenModal()}>

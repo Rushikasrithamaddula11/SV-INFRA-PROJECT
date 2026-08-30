@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { doc, getDoc, collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
@@ -18,26 +18,26 @@ const PropertyDetail = () => {
   const [showSiteVisitModal, setShowSiteVisitModal] = useState(false);
   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
 
-  useEffect(() => {
-    loadProperty();
-  }, [id]);
-
-  const loadProperty = async () => {
+  const loadProperty = useCallback(async () => {
     try {
       const propertyDoc = await getDoc(doc(db, 'properties', id));
       if (propertyDoc.exists()) {
         setProperty({ id: propertyDoc.id, ...propertyDoc.data() });
       } else {
-        showToast('Property not found');
-        navigate('/properties');
+        showToast('Service not found');
+        navigate('/services');
       }
     } catch (error) {
-      console.error('Error loading property:', error);
-      showToast('Error loading property');
+      console.error('Error loading service:', error);
+      showToast('Error loading service');
     } finally {
       setLoading(false);
     }
-  };
+  }, [id, navigate, showToast]);
+
+  useEffect(() => {
+    loadProperty();
+  }, [loadProperty]);
 
   const handleBooking = async (formData) => {
     if (!currentUser) {
@@ -121,7 +121,7 @@ const PropertyDetail = () => {
   if (!property) {
     return (
       <div className="empty-state">
-        <h3>Property not found</h3>
+        <h3>Service not found</h3>
       </div>
     );
   }
@@ -135,7 +135,7 @@ const PropertyDetail = () => {
   return (
     <div className="container" style={{ paddingTop: '36px', paddingBottom: '80px' }}>
       <div style={{ fontSize: '12px', color: 'var(--ink-3)', marginBottom: '18px' }}>
-        <Link to="/properties" style={{ color: 'var(--ink-3)' }}>Properties</Link> / {property.name}
+        <Link to="/services" style={{ color: 'var(--ink-3)' }}>Services</Link> / {property.name}
       </div>
 
       <div className="detail-gallery">
@@ -274,7 +274,7 @@ const PropertyDetail = () => {
             </div>
             <div className="dev-card">
               <strong>{property.developer}</strong><br />
-              Verified developer partner of The Swamy Properties.
+              Verified developer partner of SV Projects 972.
             </div>
           </div>
         </div>

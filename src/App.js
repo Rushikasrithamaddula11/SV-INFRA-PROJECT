@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
+import { FaWhatsapp } from 'react-icons/fa';
 import { auth, db } from './firebase';
 
 // Components
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Properties from './pages/Properties';
+import Services from './pages/Services';
+import HomeNew from './pages/HomeNew';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 import PropertyDetail from './pages/PropertyDetail';
 import Favorites from './pages/Favorites';
 import Account from './pages/Account';
@@ -23,7 +26,6 @@ import { ToastProvider } from './context/ToastContext';
 import { AuthProvider } from './context/AuthContext';
 
 function App() {
-  const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -37,7 +39,6 @@ function App() {
     }
 
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      setUser(user);
 
       if (user) {
         try {
@@ -100,8 +101,10 @@ function App() {
                   <Header />
                   <main>
                     <Routes>
-                      <Route path="/" element={<Home />} />
-                      <Route path="/properties" element={<Properties />} />
+                      <Route path="/" element={<HomeNew />} />
+                      <Route path="/services" element={<Services />} />
+                      <Route path="/projects" element={<Projects />} />
+                      <Route path="/contact" element={<Contact />} />
                       <Route path="/property/:id" element={<PropertyDetail />} />
                       <Route path="/favorites" element={<Favorites />} />
                       <Route path="/account" element={<Account />} />
@@ -109,6 +112,16 @@ function App() {
                     </Routes>
                   </main>
                   <Footer />
+                  <a
+                    className="whatsapp-float"
+                    href="https://wa.me/919515988011"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat with SV Infra Projects 972 on WhatsApp"
+                  >
+                    <FaWhatsapp aria-hidden="true" />
+                    <span>WhatsApp</span>
+                  </a>
                 </>
               }
             />

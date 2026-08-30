@@ -1,0 +1,25 @@
+.contact-page { background: #f5f1e8; padding: 72px 0; min-height: 75vh; }
+.contact-layout { display: grid; grid-template-columns: .86fr 1.32fr; gap: 70px; align-items: start; }
+.contact-info { display: grid; gap: 48px; }
+.contact-info-card, .enquiry-form-wrap { background: #fff; box-shadow: 0 14px 28px rgba(7,26,51,.08); }
+.contact-info-card { padding: 36px; }
+.contact-info-card h3 { color: #b18614; text-transform: uppercase; letter-spacing: .06em; font-family: var(--font-b); font-size: 16px; margin-bottom: 20px; }
+.contact-info-card p, .contact-direct a { display: flex; align-items: flex-start; gap: 17px; color: #405b7b; font-size: 18px; line-height: 1.6; }
+.contact-info-card svg { flex: 0 0 auto; color: #c69a1b; margin-top: 7px; }
+.contact-direct { gap: 19px; display: grid; }
+.contact-direct a { color: #0b2545; align-items: center; font-size: 17px; }
+.contact-direct a:hover { color: #31557c; }
+.contact-direct svg { margin: 0; }
+.enquiry-form-wrap { padding: 52px 48px; }
+.enquiry-form-wrap h1 { color: #0b2545; font-size: 42px; margin-bottom: 4px; }
+.enquiry-form-wrap > p { color: #60748c; font-size: 17px; }
+.enquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 36px; }
+.enquiry-form input, .enquiry-form select, .enquiry-form textarea { width: 100%; border: 1px solid #d4dce6; color: #0b2545; font-size: 16px; padding: 17px 24px; background: #fff; outline-color: #31557c; border-radius: 2px; }
+.enquiry-form textarea, .enquiry-form button { grid-column: 1 / -1; }
+.enquiry-form textarea { resize: vertical; min-height: 150px; }
+.enquiry-form button { border: 0; background: #0b2545; color: #fff; padding: 19px 24px; font-size: 17px; font-weight: 800; cursor: pointer; }
+.enquiry-form button:hover { background: #31557c; }
+.enquiry-form button svg { margin-right: 12px; }
+.form-success { margin-top: 34px; padding: 20px; background: #edf6f1; color: #145c38; border-left: 4px solid #25a866; }
+@media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; gap: 32px; } .contact-info { gap: 20px; grid-template-columns: repeat(2, 1fr); } .contact-direct { grid-column: 1 / -1; } }
+@media (max-width: 600px) { .contact-page { padding: 38px 0; } .contact-info { grid-template-columns: 1fr; } .contact-info-card, .enquiry-form-wrap { padding: 28px 22px; } .enquiry-form { grid-template-columns: 1fr; gap: 18px; } .enquiry-form-wrap h1 { font-size: 35px; } }

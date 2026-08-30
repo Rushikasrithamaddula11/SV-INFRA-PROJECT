@@ -1,0 +1,38 @@
+.sv-hero { background: #071a33; color: #fff; overflow: hidden; }
+.sv-hero-grid { min-height: 650px; display: grid; grid-template-columns: 1.02fr .98fr; }
+.sv-hero-copy { align-self: center; max-width: 650px; padding: 100px 64px 100px 0; }
+.sv-kicker { display: block; color: #d9e6f5; font-size: 12px; font-weight: 800; letter-spacing: .2em; margin-bottom: 20px; }
+.sv-kicker-dark { color: #31557c; }
+.sv-hero h1 { color: #fff; font-size: clamp(48px, 5.1vw, 76px); line-height: 1.03; margin-bottom: 25px; }
+.sv-hero h1 em { color: #bcd7ef; font-style: italic; }
+.sv-hero p { color: #ccdae8; font-size: 18px; max-width: 520px; }
+.sv-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+.sv-btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 22px; font-weight: 800; border-radius: 3px; transition: transform .2s ease, background .2s ease; }
+.sv-btn:hover { transform: translateY(-2px); }
+.sv-btn-light { background: #fff; color: #071a33; }
+.sv-btn-outline { color: #fff; border: 1px solid rgba(255,255,255,.6); }
+.sv-btn-navy { background: #0b2545; color: #fff; margin-top: 34px; }
+.sv-hero-points { display: flex; gap: 25px; flex-wrap: wrap; margin-top: 42px; font-size: 14px; color: #dce7f2; }
+.sv-hero-points svg { margin-right: 7px; color: #fff; }
+.sv-hero-image { background: linear-gradient(90deg, #071a33 0%, rgba(7,26,51,.08) 36%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1300&q=85') center/cover; min-height: 440px; }
+.sv-service-strip { background: #0c2a4d; color: #fff; padding: 0; }
+.sv-service-strip .container { display: grid; grid-template-columns: 1.25fr repeat(4, 1fr); }
+.sv-service-strip span, .sv-service-strip div { padding: 22px 18px; font-size: 13px; border-right: 1px solid rgba(255,255,255,.16); }
+.sv-service-strip span { font-size: 11px; font-weight: 800; letter-spacing: .14em; color: #bcd7ef; padding-left: 0; }
+.sv-about { background: #fff; padding: 120px 0; }
+.sv-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.sv-about-copy h2, .sv-section-title h2 { font-size: clamp(42px, 4vw, 62px); color: #0b2545; margin-bottom: 26px; }
+.sv-about-copy p { color: #556b84; font-size: 18px; line-height: 1.75; max-width: 700px; }
+.sv-about-images { position: relative; display: grid; grid-template-columns: 1.15fr .9fr; gap: 24px; align-items: end; min-height: 410px; }
+.sv-image-block { width: 100%; height: 310px; background: url(https://images.unsplash.com/photo-1503387762-592deb58ef4e) center/cover; box-shadow: 0 16px 30px rgba(7,26,51,.14); }
+.sv-image-tall { width: 100%; height: 385px; background: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=85') center/cover; box-shadow: 0 16px 30px rgba(7,26,51,.14); }
+.sv-services-preview { background: #f3f7fb; padding: 105px 0; }
+.sv-section-title { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 42px; }
+.sv-text-link { color: #0b2545; font-weight: 800; display: inline-flex; gap: 9px; align-items: center; padding-bottom: 7px; border-bottom: 1px solid #0b2545; white-space: nowrap; }
+.sv-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.sv-cards article { background: #fff; min-height: 220px; padding: 28px; border: 1px solid #dce6f0; }
+.sv-cards span { color: #31557c; font-weight: 800; font-size: 13px; }
+.sv-cards h3 { color: #0b2545; font-size: 23px; margin: 32px 0 13px; }
+.sv-cards p { color: #647890; font-size: 14px; line-height: 1.55; }
+@media (max-width: 980px) { .sv-hero-grid, .sv-about-grid { grid-template-columns: 1fr; } .sv-hero-copy { padding: 76px 0 60px; } .sv-hero-image { min-height: 370px; } .sv-service-strip .container { grid-template-columns: repeat(2, 1fr); } .sv-service-strip span { padding-left: 18px; } .sv-cards { grid-template-columns: repeat(2, 1fr); } .sv-about-images { max-width: 640px; } }
+@media (max-width: 600px) { .sv-hero-copy { padding: 62px 0 50px; } .sv-hero h1 { font-size: 45px; } .sv-about, .sv-services-preview { padding: 70px 0; } .sv-about-grid { gap: 42px; } .sv-about-images { gap: 12px; min-height: 280px; } .sv-image-block { height: 210px; } .sv-image-tall { height: 280px; } .sv-section-title { display: block; } .sv-text-link { margin-top: 18px; } .sv-cards { grid-template-columns: 1fr; } .sv-service-strip .container { grid-template-columns: 1fr; } .sv-service-strip span, .sv-service-strip div { border-bottom: 1px solid rgba(255,255,255,.16); } }

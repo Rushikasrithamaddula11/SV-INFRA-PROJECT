@@ -114,7 +114,7 @@ const AdminDashboard = () => {
             <div className="stat-icon" style={{ background: 'var(--brass)' }}>🏘️</div>
             <div className="stat-content">
               <div className="stat-value">{stats.totalProperties}</div>
-              <div className="stat-label">Total Properties</div>
+              <div className="stat-label">Total Services</div>
               <div className="stat-sub">{stats.availableProperties} available</div>
             </div>
           </div>
@@ -233,7 +233,7 @@ export const AdminHeader = ({ currentPath, onLogout, userProfile }) => {
     <div className="admin-header">
       <div className="admin-header-left">
         <div className="admin-logo">
-          THE SWAMY
+          SV PROJECTS 972
           <span className="admin-badge">Admin</span>
         </div>
         <nav className="admin-nav">
@@ -241,7 +241,7 @@ export const AdminHeader = ({ currentPath, onLogout, userProfile }) => {
             Dashboard
           </Link>
           <Link to="/admin/properties" className={currentPath === '/admin/properties' ? 'active' : ''}>
-            Properties
+            Services
           </Link>
           <Link to="/admin/bookings" className={currentPath === '/admin/bookings' ? 'active' : ''}>
             Bookings
