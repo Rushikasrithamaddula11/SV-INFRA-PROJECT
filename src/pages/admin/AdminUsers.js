@@ -21,7 +21,7 @@ const AdminUsers = () => {
       return;
     }
     loadUsers();
-  }, [currentUser, userProfile]);
+  }, [currentUser, userProfile, navigate]);
 
   const loadUsers = async () => {
     try {

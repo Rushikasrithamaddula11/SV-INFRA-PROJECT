@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { signOut } from 'firebase/auth';
@@ -39,15 +39,7 @@ const AdminProperties = () => {
     images: ''
   });
 
-  useEffect(() => {
-    if (!currentUser || userProfile?.role !== 'admin') {
-      navigate('/admin/login');
-      return;
-    }
-    loadProperties();
-  }, [currentUser, userProfile]);
-
-  const loadProperties = async () => {
+  const loadProperties = useCallback(async () => {
     try {
       const snapshot = await getDocs(collection(db, 'properties'));
       const props = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
@@ -60,7 +52,15 @@ const AdminProperties = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [showToast]);
+
+  useEffect(() => {
+    if (!currentUser || userProfile?.role !== 'admin') {
+      navigate('/admin/login');
+      return;
+    }
+    loadProperties();
+  }, [currentUser, userProfile, navigate, loadProperties]);
 
   const handleOpenModal = (property = null) => {
     if (property) {

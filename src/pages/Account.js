@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { collection, query, where, getDocs, doc, updateDoc, getDoc } from 'firebase/firestore';
 import { signOut } from 'firebase/auth';
 import { db, auth } from '../firebase';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PropertyCard from '../components/PropertyCard';
 import { format } from 'date-fns';
 import './Account.css';
@@ -25,21 +25,13 @@ const Account = () => {
   const [phone, setPhone] = useState('');
 
   useEffect(() => {
-    if (!currentUser) {
-      navigate('/');
-      return;
-    }
-    loadUserData();
-  }, [currentUser]);
-
-  useEffect(() => {
     if (userProfile) {
       setName(userProfile.name || '');
       setPhone(userProfile.phone || '');
     }
   }, [userProfile]);
 
-  const loadUserData = async () => {
+  const loadUserData = useCallback(async () => {
     try {
       // Load bookings
       const bookingsQuery = query(collection(db, 'bookings'), where('userId', '==', currentUser.uid));
@@ -77,7 +69,15 @@ const Account = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [currentUser]);
+
+  useEffect(() => {
+    if (!currentUser) {
+      navigate('/');
+      return;
+    }
+    loadUserData();
+  }, [currentUser, navigate, loadUserData]);
 
   const handleSaveProfile = async (e) => {
     e.preventDefault();
@@ -162,7 +162,7 @@ const Account = () => {
             {tabs.map(tab => (
               <a
                 key={tab.key}
-                href="#"
+                href={`/account#${tab.key}`}
                 className={activeTab === tab.key ? 'active' : ''}
                 onClick={(e) => {
                   e.preventDefault();

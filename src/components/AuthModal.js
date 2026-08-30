@@ -130,7 +130,7 @@ const AuthModal = ({ mode: initialMode, onClose, onSwitchMode }) => {
             </button>
             <div style={{ textAlign: 'center', marginTop: '14px' }}>
               <a
-                href="#"
+                href="/forgot-password"
                 style={{ fontSize: '12px', color: 'var(--ink-3)' }}
                 onClick={(e) => {
                   e.preventDefault();

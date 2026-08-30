@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { doc, setDoc, deleteDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
@@ -13,13 +13,7 @@ const PropertyCard = ({ property, onFavoriteChange }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (currentUser) {
-      checkFavorite();
-    }
-  }, [currentUser, property.id]);
-
-  const checkFavorite = async () => {
+  const checkFavorite = useCallback(async () => {
     if (!currentUser) return;
     
     try {
@@ -33,7 +27,13 @@ const PropertyCard = ({ property, onFavoriteChange }) => {
     } catch (error) {
       console.error('Error checking favorite:', error);
     }
-  };
+  }, [currentUser, property.id]);
+
+  useEffect(() => {
+    if (currentUser) {
+      checkFavorite();
+    }
+  }, [currentUser, property.id, checkFavorite]);
 
   const toggleFavorite = async (e) => {
     e.stopPropagation();

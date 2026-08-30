@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { signOut } from 'firebase/auth';
 import { db, auth } from '../../firebase';
 import { useAuth } from '../../context/AuthContext';
@@ -27,7 +27,7 @@ const AdminDashboard = () => {
       return;
     }
     loadDashboardData();
-  }, [currentUser, userProfile]);
+  }, [currentUser, userProfile, navigate]);
 
   const loadDashboardData = async () => {
     // Helper: read a collection, returning [] instead of throwing when

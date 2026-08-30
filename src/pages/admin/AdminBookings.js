@@ -24,7 +24,7 @@ const AdminBookings = () => {
       return;
     }
     loadData();
-  }, [currentUser, userProfile]);
+  }, [currentUser, userProfile, navigate]);
 
   const loadData = async () => {
     // Helper: read a collection, returning [] instead of throwing when
