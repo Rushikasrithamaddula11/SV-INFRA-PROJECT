@@ -1,7 +1,7 @@
-.contact-page { background: #f5f1e8; padding: 72px 0; min-height: 75vh; }
+.contact-page { background: #071a33; padding: 72px 0; min-height: 75vh; }
 .contact-layout { display: grid; grid-template-columns: .86fr 1.32fr; gap: 70px; align-items: start; }
 .contact-info { display: grid; gap: 48px; }
-.contact-info-card, .enquiry-form-wrap { background: #fff; box-shadow: 0 14px 28px rgba(7,26,51,.08); }
+.contact-info-card, .enquiry-form-wrap { background: #f8fafc; box-shadow: 0 18px 38px rgba(0,0,0,.2); }
 .contact-info-card { padding: 36px; }
 .contact-info-card h3 { color: #b18614; text-transform: uppercase; letter-spacing: .06em; font-family: var(--font-b); font-size: 16px; margin-bottom: 20px; }
 .contact-info-card p, .contact-direct a { display: flex; align-items: flex-start; gap: 17px; color: #405b7b; font-size: 18px; line-height: 1.6; }

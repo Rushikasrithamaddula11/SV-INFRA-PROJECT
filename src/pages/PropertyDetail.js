@@ -47,6 +47,7 @@ const PropertyDetail = () => {
 
     try {
       await addDoc(collection(db, 'bookings'), {
+        bookingType: 'property',
         userId: currentUser.uid,
         propertyId: property.id,
         propertyName: property.name,

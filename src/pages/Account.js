@@ -220,7 +220,8 @@ const Account = () => {
                   bookings.map(booking => (
                     <div key={booking.id} className="rec-card">
                       <div className="rec-main">
-                        <h4>{booking.propertyName}</h4>
+                        <h4>{booking.bookingType === 'service' ? booking.serviceName : booking.propertyName}</h4>
+                        <small>{booking.bookingType === 'service' ? 'Service booking' : 'Property booking'}</small>
                         <div className="rec-meta">
                           Visit slot: {booking.date && format(new Date(booking.date), 'dd MMM yyyy')} · {booking.time}
                         </div>

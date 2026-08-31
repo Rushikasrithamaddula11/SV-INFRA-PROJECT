@@ -115,7 +115,7 @@ const AdminBookings = () => {
               <table className="admin-table">
                 <thead>
                   <tr>
-                    <th>Property</th>
+                    <th>Request</th>
                     <th>Customer</th>
                     <th>Email</th>
                     <th>Phone</th>
@@ -127,7 +127,7 @@ const AdminBookings = () => {
                 <tbody>
                   {bookings.map(booking => (
                     <tr key={booking.id}>
-                      <td><strong>{booking.propertyName}</strong></td>
+                      <td><strong>{booking.bookingType === 'service' ? booking.serviceName : booking.propertyName}</strong><br /><small>{booking.bookingType === 'service' ? 'Service' : 'Property'}</small></td>
                       <td>{booking.name}</td>
                       <td>{booking.email}</td>
                       <td>{booking.phone}</td>
@@ -170,7 +170,7 @@ const AdminBookings = () => {
               <table className="admin-table">
                 <thead>
                   <tr>
-                    <th>Property</th>
+                    <th>Request</th>
                     <th>Customer</th>
                     <th>Phone</th>
                     <th>Date & Time</th>
@@ -227,7 +227,7 @@ const AdminBookings = () => {
               <table className="admin-table">
                 <thead>
                   <tr>
-                    <th>Property</th>
+                    <th>Request</th>
                     <th>Customer</th>
                     <th>Email</th>
                     <th>Phone</th>
@@ -239,7 +239,7 @@ const AdminBookings = () => {
                 <tbody>
                   {enquiries.map(enquiry => (
                     <tr key={enquiry.id}>
-                      <td><strong>{enquiry.propertyName}</strong></td>
+                      <td><strong>{enquiry.serviceName || enquiry.propertyName}</strong><br /><small>{enquiry.serviceName ? 'Service' : 'Property'}</small></td>
                       <td>{enquiry.userName}</td>
                       <td>{enquiry.userEmail}</td>
                       <td>{enquiry.phone}</td>

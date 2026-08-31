@@ -41,11 +41,20 @@ service cloud.firestore {
       // Only admins can create, update, or delete properties
       allow create, update, delete: if isAdmin();
     }
+
+    match /services/{serviceId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
     
     // Bookings collection
     match /bookings/{bookingId} {
       // Users can create bookings
-      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid &&
+        ((request.resource.data.bookingType == 'service' &&
+          request.resource.data.serviceId is string && request.resource.data.serviceName is string) ||
+         (request.resource.data.bookingType == 'property' &&
+          request.resource.data.propertyId is string && request.resource.data.propertyName is string));
       
       // Users can read their own bookings, admins can read all
       allow read: if isAuthenticated() && 

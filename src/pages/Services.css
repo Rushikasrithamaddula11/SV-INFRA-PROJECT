@@ -68,3 +68,27 @@
   font-size: 18px;
   line-height: 1.35;
 }
+
+.service-description { margin: 10px 0 0; color: var(--ink-3); font-size: 13px; line-height: 1.5; }
+
+.service-book-button {
+  margin-top: 18px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.service-book-button:hover { background: var(--ink); color: var(--cream); }
+.service-modal-backdrop { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 20px; background: rgba(7, 26, 51, .72); }
+.service-modal { position: relative; width: min(520px, 100%); padding: 36px; background: var(--cream); box-shadow: 0 24px 70px rgba(0,0,0,.25); }
+.service-modal h2 { margin: 10px 0 6px; color: var(--ink); font-size: 28px; }
+.service-modal p { color: var(--ink-3); line-height: 1.5; }
+.service-modal-close { position: absolute; top: 12px; right: 16px; border: 0; background: transparent; color: var(--ink); font-size: 28px; cursor: pointer; }
+.service-booking-form { display: grid; gap: 14px; margin-top: 24px; }
+.service-booking-form input, .service-booking-form textarea { width: 100%; border: 1px solid var(--line); padding: 13px; background: var(--paper); color: var(--ink); font: inherit; }
+.service-booking-form button { border: 0; padding: 14px; background: var(--ink); color: var(--cream); font-weight: 700; cursor: pointer; }
+.service-booking-form button:disabled { opacity: .65; cursor: wait; }

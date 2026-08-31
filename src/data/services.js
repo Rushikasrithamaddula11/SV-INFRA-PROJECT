@@ -1,0 +1,15 @@
+import { FaBuilding, FaDraftingCompass, FaLayerGroup, FaLightbulb, FaThLarge, FaWindowMaximize, FaTools } from 'react-icons/fa';
+
+export const DEFAULT_SERVICES = [
+  { id: 'acp-3d-facade-cladding', name: 'ACP 3D Facade Cladding', icon: FaLayerGroup, image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80', description: 'Distinctive, durable facade systems for modern buildings.' },
+  { id: 'premium-architectural-elevations', name: 'Premium Architectural Elevations', icon: FaDraftingCompass, image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80', description: 'Exterior concepts shaped around your building and vision.' },
+  { id: 'cnc-cut-acp-designs', name: 'CNC Cut ACP Designs', icon: FaTools, image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80', description: 'Accurate custom patterns and panels with a clean finish.' },
+  { id: 'laser-cut-decorative-panels', name: 'Laser Cut Decorative Panels', icon: FaLightbulb, image: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80', description: 'Decorative screens that add privacy, shade and character.' },
+  { id: 'perforated-acp-facades', name: 'Perforated ACP Facades', icon: FaThLarge, image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80', description: 'Lightweight perforated facade solutions for visual depth.' },
+  { id: 'aluminium-composite-panel-works', name: 'Aluminium Composite Panel Works', icon: FaBuilding, image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80&sat=-30', description: 'Complete ACP installation for commercial and residential spaces.' },
+  { id: 'glass-glazing', name: 'Glass Glazing', icon: FaWindowMaximize, image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80', description: 'Bright, precise glazing systems built for performance.' },
+  { id: 'spider-glazing', name: 'Spider Glazing', icon: FaWindowMaximize, image: 'https://images.unsplash.com/photo-1462396881884-de2c07cb95ed?auto=format&fit=crop&w=900&q=80', description: 'Minimal structural connections for a seamless glass facade.' },
+  { id: 'structural-glazing', name: 'Structural Glazing', icon: FaBuilding, image: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80', description: 'High-performance glass envelopes with clean sight lines.' },
+  { id: 'aluminium-upvc-windows', name: 'Aluminium & UPVC Windows', icon: FaWindowMaximize, image: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80&sat=-40', description: 'Efficient window systems tailored to your opening and style.' },
+  { id: 'exterior-renovation-works', name: 'Exterior Renovation Works', icon: FaTools, image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80', description: 'Thoughtful upgrades that renew and protect existing exteriors.' }
+];
