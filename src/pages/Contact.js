@@ -25,7 +25,7 @@ const Contact = () => {
           <article className="contact-info-card contact-direct">
             <a href="tel:+919515988011"><FaPhoneAlt aria-hidden="true" /> +91 95159 88011</a>
             <a href="tel:+918801185559"><FaPhoneAlt aria-hidden="true" /> +91 88011 85559</a>
-            <a href="mailto:info@svinfraprojects.com"><FaEnvelope aria-hidden="true" /> info@svinfraprojects.com</a>
+            <a href="mailto:svinfraprojects972@gmail.com"><FaEnvelope aria-hidden="true" /> svinfraprojects972@gmail.com</a>
           </article>
         </aside>
         <div className="enquiry-form-wrap">

@@ -17,7 +17,6 @@ import Favorites from './pages/Favorites';
 import Account from './pages/Account';
 import About from './pages/About';
 import AdminDashboard from './pages/admin/AdminDashboard';
-import AdminProperties from './pages/admin/AdminProperties';
 import AdminBookings from './pages/admin/AdminBookings';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminLogin from './pages/admin/AdminLogin';
@@ -39,7 +38,6 @@ function App() {
     }
 
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-
       if (user) {
         try {
           // Check if user is admin
@@ -79,10 +77,6 @@ function App() {
             <Route
               path="/admin"
               element={isAdmin ? <AdminDashboard /> : <Navigate to="/admin/login" />}
-            />
-            <Route
-              path="/admin/properties"
-              element={isAdmin ? <AdminProperties /> : <Navigate to="/admin/login" />}
             />
             <Route
               path="/admin/bookings"
