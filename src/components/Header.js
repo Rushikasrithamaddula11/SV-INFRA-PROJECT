@@ -5,8 +5,9 @@ import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 import { FaHome, FaBuilding, FaSearch, FaUser, FaHeart, FaCog } from 'react-icons/fa';
 import AuthModal from './AuthModal';
-import logo from '../logo.svg';
 import './Header.css';
+
+const logo = './logo.svg';
 
 const Header = () => {
   const { currentUser, userProfile } = useAuth();
@@ -54,10 +55,6 @@ const Header = () => {
         <div className="container nav-row">
           <Link to="/" className="logo">
             <img src={logo} alt="SV Projects 972" className="logo-img" />
-            <span className="logo-text">
-              SV PROJECTS
-              <span className="logo-sub">972</span>
-            </span>
           </Link>
 
           <nav className="desktop-nav">
